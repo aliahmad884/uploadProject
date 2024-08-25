@@ -33,3 +33,6 @@ jobs:
         protocol: ftps 
         local-dir: ./
         server-dir: /home/wecarhir/test06.aldortech.com/  # Adjust this if your app is in a different directory
+        exclude: |
+          .next/cache/
+          node_modules/
