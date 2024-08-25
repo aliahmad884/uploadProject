@@ -1,0 +1,33 @@
+{
+  "name": "aldortech",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@ionic/react": "^8.2.6",
+    "@weavy/uikit-react": "^24.0.3",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "ionicons": "^7.4.0",
+    "mongodb": "^6.8.0",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-loader-spinner": "^6.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "nodemon": "^3.1.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}

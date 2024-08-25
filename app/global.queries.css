@@ -1,0 +1,290 @@
+@media(width>=1800px) {
+    body {
+        margin: auto;
+    }
+}
+
+@media(width<=1400px) {
+    .navContainer ul {
+        width: 70%;
+        transition: all 0.5s;
+    }
+
+    .heroCont .colorCont {
+        transform: rotate(-45deg) translate(200px, 400px);
+        height: 900px;
+    }
+
+    .heroCont .leftContent {
+        top: 170px;
+        left: 80px;
+        width: 40%;
+    }
+
+    .heroCont .rightContent {
+        right: 80px;
+    }
+
+    .postCont1 .posterCont .postText,
+    .postCont2 .posterCont .postText {
+        font-size: 1.4rem;
+        /* max-height: 350px; */
+        /* overflow-y: scroll; */
+    }
+
+    .blogCard {
+        padding-bottom: 50px;
+    }
+
+    .servicePage .promise p {
+        width: 80%;
+    }
+}
+
+@media(width<=1100px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0;
+    }
+
+    .navContainer ul {
+        display: none;
+    }
+
+    .navBar .menuBtn {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .heroCont .colorCont {
+        transform: rotate(-90deg) translate(50px, 350px);
+        height: 600px;
+    }
+
+    .heroCont .rightContent {
+        width: 30%;
+        right: 50px;
+    }
+
+    .postCont1 .posterCont,
+    .postCont2 .posterCont {
+        flex-flow: column-reverse;
+        transition: all 0.5s;
+    }
+
+    .headingCont .boldtextCont {
+        flex-flow: column nowrap;
+    }
+
+    .headingCont .boldtextCont .paragraph,
+    .headingCont .boldtextCont h1 {
+        width: 100%;
+    }
+
+    .postCont1 .posterCont .postText,
+    .postCont1 .posterCont .postImg,
+    .postCont2 .posterCont .postText,
+    .postCont2 .posterCont .postImg {
+        width: 100%;
+        padding: 50px;
+        user-select: none;
+        transition: all 0.5s;
+    }
+
+    .headingCont .logoCont img {
+        height: auto;
+        padding: 0;
+    }
+
+    .servicePage .posterCont {
+        flex-flow: column-reverse;
+    }
+
+    .servicePage .posterCont .text,
+    .servicePage .posterCont .imgCont {
+        width: 100%;
+    }
+
+    .serviceCard {
+        width: 45%;
+    }
+
+    .servicePage .serviceCont .serviceCardCont {
+        flex-flow: row wrap;
+    }
+
+    .aboutPage .postCont {
+        flex-flow: column;
+    }
+
+    .aboutPage .postCont .img,
+    .aboutPage .postCont .text {
+        width: 100%;
+    }
+
+    .contactPage .mainCont {
+        flex-flow: column;
+    }
+
+    .contactPage .mainCont .img,
+    .contactPage .mainCont .form {
+        width: 100%;
+    }
+
+    .contactPage .mainCont .form {
+        margin-bottom: 20px;
+    }
+
+    .footerCont .container .address {
+        width: 50%;
+    }
+
+    .footerCont .container .quiklinks,
+    .footerCont .container .navigation {
+        width: 25%;
+    }
+
+    .footerCont .container .brandLogo {
+        width: 40%;
+    }
+}
+
+@media(width<=770px) {
+    main {
+        padding-top: 80px;
+    }
+
+    .navContainer {
+        padding: 5px 20px;
+        transition: all 0.5s;
+    }
+
+    .menuLinks li {
+        padding: 5px 0 0 20px;
+    }
+
+    .heroCont .colorCont {
+        display: none;
+    }
+
+    .heroCont .rightContent,
+    .heroCont .leftContent {
+        position: unset;
+        width: 80%;
+    }
+
+    .heroCont {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .postCont1 .brand h1,
+    .postCont2 .brand h1 {
+        font-size: 2rem;
+    }
+
+    .headingCont .logoCont,
+    .headingCont .cardsCont .cards,
+    .reviewCont .reviewCardCont .reviewCard {
+        width: 60%;
+    }
+
+    .reviewCont .reviewCardCont {
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .serviceCard {
+        width: 80%;
+    }
+
+    .servicePage .whyUsCont p {
+        padding: 0;
+    }
+
+    .aboutPage .secondCont ul {
+        flex-flow: column;
+    }
+
+    .aboutPage .secondCont li {
+        width: 100%;
+    }
+
+
+    .footerCont .container .quiklinks,
+    .footerCont .container .address {
+        width: 50%;
+    }
+
+
+    .footerCont .container .navigation {
+        width: 30%;
+    }
+
+    .footerCont .container .brandLogo {
+        width: 70%;
+    }
+    .footerCont .copyright{
+        padding:0 20px 30px 20px;
+    }
+}
+
+@media (width<=550px) {
+
+    .postCont1 .brand,
+    .postCont2 .brand {
+        padding: 40px 0;
+    }
+
+    .postCont1 .brand h1,
+    .postCont2 .brand h1 {
+        font-size: 1.4rem;
+    }
+
+    .postCont1 .brand p,
+    .postCont2 .brand p {
+        font-size: 1rem;
+    }
+
+    .headingCont .logoCont,
+    .headingCont .cardsCont .cards,
+    .reviewCont .reviewCardCont .reviewCard {
+        width: 100%;
+    }
+
+    .servicePage .posterCont .text h1 {
+        font-size: 2rem;
+    }
+
+    .servicePage .promise h2 {
+        font-size: 1.5rem;
+    }
+
+    .serviceCard{
+        width: 100%;
+    }
+
+    .aboutPage .secondCont ul {
+        padding: 10px 0 0 10px;
+    }
+
+    .formCont .subCont {
+        flex-flow: column;
+    }
+
+    .footerCont .container .address,
+    .footerCont .container .quiklinks,
+    .footerCont .container .navigation,
+    .footerCont .container .brandLogo {
+        width: 100%;
+        text-align: center;
+    }
+
+}

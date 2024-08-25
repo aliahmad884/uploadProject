@@ -1,0 +1,1 @@
+:root{--theme-contrast:linear-gradient(#fff,#fff)}.dark-theme{--theme-contrast:#000}body{position:relative}.loaderContainer{position:absolute;top:0;left:0;background:var(--theme-contrast);width:100%;z-index:100;height:100vh}.temp{display:flex;align-items:center;justify-content:center;height:100vh}

@@ -1,0 +1,1449 @@
+/* 
+    Styles: https://aldortech.com
+    All Rights Reserved
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* -------------------------- Root Custome Properties ------------------------- */
+:root {
+    --theme-btn: #000000;
+    --blue-1: #1679AB;
+    --gradient-dark: linear-gradient(315deg, #130f40 0%, #000000 74%);
+    --gradient-light: linear-gradient(329deg, rgba(221, 220, 229, 1) 11%, rgba(231, 231, 233, 1) 34%, rgba(224, 247, 252, 1) 100%);
+    --theme-icon: white;
+    --toolbar-bg: rgba(221, 220, 229, 1);
+    --nav-border: rgba(221, 220, 229, 1);
+    --theme-border: rgba(221, 220, 229, 1);
+    --dropdown-link-border: black;
+    --navBg: rgba(224, 247, 252, 1);
+    --theme-text-color: black;
+    --theme-contrast: white;
+    --theme-hover-color: #1679AB;
+    --bg-color: rgb(221, 220, 229);
+    --bg-gradient: linear-gradient(329deg, rgba(221, 220, 229, 1) 11%, rgba(231, 231, 233, 1) 34%, rgba(224, 247, 252, 1) 100%);
+    --theme-footer: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+    --theme-shadow-color: 10px 10px 71px -8px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+}
+
+
+/* ----------------------------- --- Root End ---------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ---------------------------- Dark Theme Styles ------------------------------ */
+.dark-theme {
+    --theme-btn: #000000;
+    --theme-icon: orange;
+    --theme-border: #130f40;
+    --theme-contrast: black;
+    --toolbar-bg: #130f40;
+    --nav-border: #130f40;
+    --dropdown-link-border: white;
+    --navBg: #000000;
+    --theme-hover-color: #1679AB;
+    --theme-text-color: white;
+    --bg-color: #130f40;
+    --bg-gradient: linear-gradient(315deg, #130f40 0%, #000000 74%);
+    --theme-footer: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+    --theme-shadow-color: -2px 2px 47px -6px rgba(237, 230, 237, 0.62);
+}
+
+/* ---------------------------- Dark Theme End --------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ---------------------------- Global Styles ---------------------------------- */
+body {
+    margin: auto;
+    max-width: 1800px;
+    min-width: 370px;
+    position: relative;
+    background-repeat: no-repeat;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/bg.webp');
+    background-position: center;
+    background-size: cover; */
+    background-color: var(--theme-contrast);
+    overflow: hidden;
+}
+
+main {
+    color: var(--theme-text-color);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    max-height: 100vh;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 100px;
+    transition: all 0.5s;
+}
+
+.globalBG {
+    background: var(--bg-gradient);
+    width: 100%;
+    margin-top: 150px;
+}
+
+.quikIconCont {
+    position: fixed;
+    z-index: 50;
+    bottom: 0;
+    right: 0;
+    margin: 8px;
+}
+
+.quikIconCont .whatsCont {
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.quikIconCont .whatsCont .whatsapp {
+    font-size: 35px;
+    background-color: green;
+    border-radius: 50%;
+    padding: 8px;
+    color: white;
+}
+
+.quikIconCont .whatsCont:hover {
+    transform: scale(1.1);
+}
+
+.quikIconCont .upCont {
+    cursor: pointer;
+    transition: all 0.5s;
+    display: none;
+}
+
+.quikIconCont .upCont .arrowUp {
+    font-size: 35px;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: var(--blue-1);
+    color: white;
+    transition: all 0.5s;
+}
+
+.quikIconCont .upCont:hover .arrowUp {
+    transform: scale(1.1);
+}
+
+/* _________________ Blog Card Styles ______________________ */
+.blogCard {
+    min-height: 300px;
+    height: 100%;
+    width: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.blogCard h3 {
+    padding-top: 50px;
+    font-size: 1.5rem;
+    color: var(--blue-1);
+    font-weight: bold;
+}
+
+.blogCard p {
+    font-size: larger;
+    text-align: justify;
+}
+
+.blogCard button {
+    color: var(--blue-1);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.blogCard .imgContainer {
+    padding: 7px;
+    background-color: var(--blue-1);
+    border-radius: 10px;
+    cursor: unset;
+}
+
+.blogCard .imgContainer .img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    border-radius: 10px;
+    transform: rotate(-10deg);
+    transition: all 0.5s;
+}
+
+.blogCard:hover .imgContainer .img {
+    transform: rotate(0);
+}
+
+/* _________________ Blog Card End ______________________ */
+
+/* _______________ Indus Card Styles ____________________ */
+.indCard {
+    width: 250px;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid var(--blue-1);
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.indCard p {
+    font-size: 1.5rem;
+}
+
+.indCard img {
+    width: 50px;
+}
+
+/* ________________ Indus Card End ______________________ */
+/* _____________ Service Card Styles ____________________ */
+.serviceCard {
+    width: 28%;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: all 0.5s;
+    padding: 40px;
+    box-shadow: var(--theme-shadow-color);
+}
+
+.serviceCard img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.serviceCard h2 {
+    font-size: 1.8rem;
+    color: var(--blue-1);
+}
+
+.serviceCard p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* ________________ Service Card End ______________________ */
+
+/* _______________ Portfolio Card End _____________________ */
+.portCard {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+    height: 100%;
+    width: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.portCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.title {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+}
+
+.readmore {
+    background-color: var(--blue-1);
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    color: white;
+    font-size: 1.2rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.portCard:hover .title,
+.portCard:hover .readmore,
+.portCard:hover::before {
+    opacity: 1;
+}
+
+/* ________________ PortFolio Card End ______________________ */
+
+/* --------------------------- Global Styles End ------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ---------------------------- Toolbar Section -------------------------------- */
+.toolBarCont {
+    height: 35px;
+    width: 100%;
+    max-width: 1800px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background: var(--bg-gradient);
+}
+
+.themeBtnCont {
+    position: relative;
+    margin: 5px 20px;
+    height: 15px;
+    width: 60px;
+    background-color: var(--blue-1);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.themeBtnCont .inner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-icon);
+    height: 25px;
+    left: 5px;
+    top: -5px;
+    width: 25px;
+    background-color: var(--theme-btn);
+    border-radius: 50%;
+    transition: all 1s;
+}
+
+.themeBtnCont .inner.slide {
+    left: 30px;
+}
+
+/* ----------------------------- Toolbar End ----------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ---------------------------- Navbar Section --------------------------------- */
+.navBar {
+    position: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    max-width: 1800px;
+    background-color: var(--navBg);
+    top: 35px;
+    transition: all 0.4s;
+    z-index: 100;
+}
+
+.menuLinks {
+    color: var(--theme-text-color);
+    background-color: var(--navBg);
+    max-height: 0;
+    z-index: 100;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
+}
+
+.menuLinks.show {
+    max-height: 500px;
+}
+
+.menuLinks li {
+    margin: 0 15px;
+    cursor: pointer;
+    padding: 5px 0 0 100px;
+    border-bottom: 1px solid var(--dropdown-link-border);
+    transition: all 0.5s;
+}
+
+.menuLinks li a {
+    width: 100%;
+}
+
+.navContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 15px 100px;
+    justify-content: space-between;
+}
+
+.sticky {
+    border-bottom: 1px solid var(--nav-border);
+}
+
+.navContainer ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 60%;
+    color: var(--theme-text-color);
+    transition: all 0.5s;
+}
+
+.navContainer li {
+    font-size: 1.3rem;
+    transition: all 0.5s;
+}
+
+.navContainer li:hover {
+    color: var(--theme-hover-color);
+    transition: all 0.5s;
+}
+
+.navContainer .logoContainer {
+    color: var(--theme-text-color);
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: all 1s;
+}
+
+.navContainer .menuBtn {
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.navContainer .menuBtn:hover span {
+    background-color: var(--theme-hover-color);
+}
+
+.navContainer .menuBtn span {
+    width: 35px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--theme-text-color);
+    transition: all 0.5s;
+}
+
+.navContainer .menuBtn.open span:first-child {
+    transform: rotate(45deg) translate(10px, 3px);
+}
+
+.navContainer .menuBtn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navContainer .menuBtn.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -4px);
+}
+
+/* ------------------------------- Navbar End ---------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ------------------------------- Home Page ----------------------------------- */
+
+/*______________ Hero Section ________________ */
+.homePage {
+    margin-bottom: 150px;
+}
+
+.heroCont {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--theme-border);
+    transition: all 0.5s;
+}
+
+.heroCont .colorCont {
+    background: var(--bg-gradient);
+    width: 100%;
+    transform: rotate(-45deg) translate(300px, 300px);
+    height: 900px;
+    z-index: 0;
+    transition: all 3s;
+}
+
+.heroCont .leftContent {
+    position: absolute;
+    width: 25%;
+    left: 150px;
+    top: 130px;
+    transition: all 0.5s;
+}
+
+.heroCont .rightContent {
+    position: absolute;
+    width: 25%;
+    right: 150px;
+    top: 210px;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.heroCont .leftContent>h3 {
+    color: orange;
+    font-size: 1.5rem;
+    text-align: justify;
+    user-select: none;
+}
+
+.heroCont .rightContent .btnCont {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+
+.heroCont .rightContent .btnCont>a {
+    width: 100%;
+    height: 50px;
+    background-color: var(--blue-1);
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    color: var(--theme-text-color);
+    border-radius: 5px;
+    user-select: none;
+}
+
+/*________________ Hero End __________________ */
+
+/*_____________ Services Section _____________ */
+.postCont1,
+.postCont2,
+.headingCont,
+.quikPort,
+.quikBlog,
+.reviewCont {
+    background: var(--bg-gradient);
+    width: 100%;
+    margin-top: 150px;
+}
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+.slideContent {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 1800px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-bottom: 2px solid var(--theme-border);
+    border-top: 2px solid var(--theme-border);
+    transition: all 5s;
+
+}
+
+.slideContent:hover ul {
+    animation-play-state: paused;
+}
+
+.slideContent ul {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: 40s slide infinite linear;
+}
+
+.slideContent li {
+    font-size: 1rem;
+    padding: 10px 30px;
+    user-select: none;
+    background-color: var(--bg-gradient);
+    color: var(--theme-text-color);
+    min-width: fit-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.postCont1 .brand,
+.postCont2 .brand {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.postCont1 .brand h1,
+.postCont2 .brand h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--blue-1);
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.postCont1 .brand p,
+.postCont2 .brand p {
+    font-size: 1.2rem;
+}
+
+.postCont1 .posterCont {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    transition: all 0.5s;
+}
+
+.postCont2 .posterCont {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    transition: all 0.5s;
+}
+
+.postCont1 .posterCont .postText,
+.postCont1 .posterCont .postImg,
+.postCont2 .posterCont .postText,
+.postCont2 .posterCont .postImg {
+    width: 50%;
+    padding: 50px;
+    user-select: none;
+    transition: all 0.5s;
+}
+
+.postCont1 .posterCont .postText,
+.postCont2 .posterCont .postText {
+    font-size: 1.3rem;
+    text-align: justify;
+    color: var(--theme-text-color);
+    transition: all 0.5s;
+}
+
+.postCont1 .posterCont .postImg img,
+.postCont2 .posterCont .postImg img {
+    /* width: 75%; */
+    margin: auto;
+    border-radius: 5px;
+}
+
+/*_______________ Services End ________________ */
+
+/*_____________ Headings Section _____________ */
+.headingCont {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.headingCont .boldtextCont {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 80px 0;
+}
+
+.headingCont .boldtextCont h1 {
+    width: 50%;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--blue-1);
+}
+
+.headingCont .boldtextCont .paragraph {
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.headingCont .cardsCont {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 0 80px 0;
+}
+
+.headingCont .cardsCont .cards {
+    height: 200px;
+    width: 22%;
+    padding: 50px;
+    background-color: var(--blue-1);
+    color: white;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.headingCont .logoCont {
+    width: 100%;
+    padding: 40px 0 80px 0;
+}
+
+.headingCont .logoCont img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/*______________ Headings End _________________ */
+
+/*_____________ Quik Portfolio _______________ */
+.quikPort {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.quikPort h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--blue-1);
+    padding: 50px 0;
+}
+
+.quikPort .portCardCont {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+    padding: 40px 0 80px 0;
+}
+
+.quikPort .portCardCont .redirectCard {
+    background-color: var(--blue-1);
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: relative;
+}
+
+.quikPort .portCardCont .redirectCard h3 {
+    font-size: 1.5rem;
+    padding: 20px 15px;
+}
+
+.quikPort .portCardCont .redirectCard button {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 70px;
+    background-color: #130f40;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*_____________ Quik Port End _________________ */
+
+/*______________ Quik Blogs __________________ */
+.quikBlog {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.quikBlog h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--blue-1);
+    padding: 50px 0;
+}
+
+.quikBlog .blogCardCont {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+    padding: 40px 0 80px 0;
+}
+
+/*______________ Quik Blog End ________________ */
+
+/*_____________ Reviews Section ______________ */
+.reviewCont {
+    padding: 60px 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.reviewCont h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--blue-1);
+}
+
+.reviewCont .reviewCardCont {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 60px;
+}
+
+.reviewCont .reviewCardCont .reviewCard {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    width: 48%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--blue-1);
+    transition: all 0.5s;
+}
+
+.reviewCont .reviewCardCont .reviewCard .time {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reviewCont .reviewCardCont .reviewCard .text {
+    text-align: justify;
+    font-size: large;
+}
+
+.reviewCont .reviewCardCont .reviewCard .avatar {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+
+.reviewCont .reviewCardCont .reviewCard .avatar img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.reviewCont .reviewCardCont .reviewCard .avatar h3 {
+    font-size: larger;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+/*__________________ Reviews End _____________________ */
+
+/* ------------------------------- Hoome End ----------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ------------------------------- Blogs Pge ----------------------------------- */
+.blogPage .headingCont {
+    background: var(--bg-gradient);
+    width: 100%;
+    margin-top: 0px;
+    padding: 50px 50px;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.blogPage .headingCont h1 {
+    font-size: 2rem;
+    color: var(--blue-1);
+    font-weight: bolder;
+}
+
+.blogPage .headingCont h2 {
+    font-size: 1.5rem;
+    color: var(--theme-text-color);
+    font-weight: bolder;
+}
+
+.blogPage .blogsContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+    padding: 40px 50px 80px 50px;
+    margin-bottom: 150px;
+}
+
+
+/* ------------------------------- Blogs End ----------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ----------------------------- Services Page --------------------------------- */
+.servicePage {
+    margin-bottom: 150px;
+}
+
+.servicePage .posterCont {
+    background: var(--bg-gradient);
+    width: 100%;
+    padding: 50px 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    gap: 50px;
+}
+
+.servicePage .posterCont .imgCont {
+    width: 47%;
+    transition: all 0.5s;
+}
+
+.servicePage .posterCont .imgCont .img {
+    padding: 10px;
+    background-color: var(--blue-1);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.servicePage .posterCont .imgCont .img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.servicePage .posterCont .text {
+    width: 47%;
+    transition: all 0.5s;
+}
+
+.servicePage .posterCont .text h1 {
+    font-size: 3rem;
+    color: var(--blue-1);
+    transition: all 0.5s;
+}
+
+.servicePage .posterCont .text p {
+    font-size: 1.4rem;
+    text-align: justify;
+}
+
+.servicePage .promise {
+    text-align: center;
+    padding: 50px 50px;
+}
+
+.servicePage .industryCont h2,
+.servicePage .promise h2 {
+    font-size: 2.3rem;
+    color: var(--blue-1);
+    font-weight: bolder;
+    text-align: center;
+}
+
+.servicePage .promise p {
+    font-size: 1.4rem;
+    width: 50%;
+    margin: auto;
+    transition: all 0.5s;
+}
+
+.servicePage .industryCont {
+    padding: 50px;
+}
+
+.servicePage .industryCont h3 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.servicePage .industryCont .indCardCont {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.servicePage .serviceCont {
+    padding: 50px;
+}
+
+.servicePage .serviceCont h1 {
+    font-size: 2.3rem;
+    color: var(--blue-1);
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 50px;
+}
+
+.servicePage .serviceCont .serviceCardCont {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.servicePage .serviceCont .btnCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.servicePage .serviceCont .btnCont a {
+    height: 50px;
+    width: 300px;
+    font-size: 1.2rem;
+    background-color: var(--blue-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    transition: all 0.5s;
+
+}
+
+.servicePage .serviceCont .btnCont a:hover {
+    border-radius: 10px;
+}
+
+.servicePage .whyUsCont {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+}
+
+.servicePage .whyUsCont h1 {
+    font-size: 2rem;
+    color: var(--blue-1);
+    font-weight: bolder;
+}
+
+.servicePage .whyUsCont p {
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 0 60px;
+}
+
+/* --------------------------- Services Page End ------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ---------------------------- Blogs Page End --------------------------------- */
+.portPage .headingCont {
+    background: var(--bg-gradient);
+    width: 100%;
+    margin-top: 0px;
+    padding: 50px 50px;
+    user-select: none;
+
+}
+
+.portPage .headingCont h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--blue-1);
+}
+
+.portPage .projectCont {
+    margin-bottom: 150px;
+    padding: 30px 0 50px 0;
+}
+
+.portPage .projectCont .filterCont {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.portPage .projectCont .filterCont span {
+    font-size: 1.3rem;
+}
+
+.portPage .projectCont .filterCont ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    max-width: 800px;
+    overflow-x: scroll;
+}
+
+.portPage .projectCont .filterCont li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.portPage .projectCont .filterCont li:hover {
+    background-color: var(--blue-1);
+}
+
+.portPage .projectCont .projectCardCont {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 50px;
+    transition: all 0.5s;
+}
+
+
+/* ---------------------------- Blogs Page End --------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* ----------------------------- About Us Page --------------------------------- */
+
+/* .aboutPage{
+    padding:50px ;
+} */
+.aboutPage .firstCont {
+    width: 100%;
+    background: var(--bg-gradient);
+    padding: 50px;
+}
+
+.aboutPage .firstCont h1 {
+    text-align: left;
+    font-size: 2rem;
+    color: var(--blue-1);
+    font-weight: bolder;
+    padding-bottom: 20px;
+}
+
+.aboutPage .postCont {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 20px; */
+    width: 100%;
+}
+
+.reverse {
+    flex-flow: row-reverse;
+}
+
+.aboutPage .postCont .text {
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    text-align: left;
+    padding: 20px 0;
+    /* border:2px solid black; */
+}
+
+.aboutPage .postCont .text h2 {
+    font-size: 1.5rem;
+    color: grey;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.aboutPage .firstCont .subCont p,
+.aboutPage .postCont .text p {
+    text-align: justify;
+}
+
+.aboutPage .postCont .img {
+    width: 47%;
+    background-color: var(--blue-1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.aboutPage .postCont .img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.aboutPage .firstCont .subCont {
+    padding: 20px 0;
+}
+
+.aboutPage .firstCont .subCont h3 {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--blue-1);
+}
+
+.aboutPage .secondCont {
+    padding: 50px;
+    margin-bottom: 150px;
+}
+
+.aboutPage .secondCont h3 {
+    font-size: 2rem;
+    color: var(--blue-1);
+    font-weight: bolder;
+}
+
+.aboutPage .secondCont ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size: 1.2rem;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 20px 0 0 50px;
+    margin-bottom: 50px;
+    transition: all 0.5s;
+}
+
+.aboutPage .secondCont li {
+    padding: 6px 0;
+    width: 47%;
+}
+
+/* -------------------------- About Us Page End -------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* --------------------------- Contact Us Page --------------------------------- */
+.contactPage .heading {
+    width: 100%;
+    background: var(--bg-gradient);
+    text-align: center;
+    padding: 50px;
+}
+
+.contactPage .heading h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--blue-1);
+    font-weight: bolder;
+}
+
+.contactPage .mainCont {
+    padding: 50px;
+    width: 100%;
+    background: var(--bg-gradient);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 150px 0;
+    transition: all 0.5s;
+}
+
+.contactPage .mainCont .img,
+.contactPage .mainCont .form {
+    width: 47%;
+    transition: all 0.5s;
+}
+
+.contactPage .mainCont .img img {
+    border-radius: 10px;
+}
+
+.formCont {
+    width: 100%;
+    padding: 10px;
+}
+
+.formCont .subCont {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    transition: all 0.5s;
+}
+
+.formCont .input-box {
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.formCont .input-box label {
+    position: absolute;
+    top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--blue-1);
+}
+
+.formCont input {
+    width: 100%;
+    padding: 25px 5px 0 10px;
+    height: 60px;
+    background: transparent;
+    border-bottom: 2px solid var(--blue-1);
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.formCont textarea {
+    width: 100%;
+    padding-top: 40px;
+    padding-left: 10px;
+    background: transparent;
+    border-bottom: 2px solid var(--blue-1);
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.formCont button {
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--blue-1);
+}
+
+/* -------------------------- Contact Page End --------------------------------- */
+/*          --------------------------===-----------------------------           */
+/* -------------------------------- Footer ------------------------------------- */
+
+.footerCont {
+    display: flex;
+    flex-flow: column wrap;
+    background: var(--theme-footer);
+    color: white;
+    justify-content: space-between;
+    border-top: 2px solid var(--theme-border);
+}
+
+.footerCont .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    color: var(--theme-text-color);
+    max-width: 1800px;
+    padding: 0 50px;
+    padding-top: 50px;
+    /* gap: 80px; */
+}
+
+.footerCont .container .brandLogo h2,
+.footerCont .container .quiklinks h2,
+.footerCont .container .address h2,
+.footerCont .container .navigation h2 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.footerCont .container .navigation,
+.footerCont .container .brandLogo {
+    width: 30%;
+    margin-bottom: 50px;
+}
+
+.footerCont .container .address,
+.footerCont .container .quiklinks {
+    width: 20%;
+    margin-bottom: 50px;
+}
+
+.footerCont .container .navigation ion-icon {
+    transition: all 0.5s;
+}
+
+.footerCont .container .navigation li:hover ion-icon {
+    transform: scale(1.2);
+    padding-right: 10px;
+}
+
+.footerCont .container .brandLogo {
+    display: flex;
+    flex-flow: column;
+}
+
+.footerCont .container .brandLogo h2 {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.footerCont .container .brandLogo ion-icon {
+    font-size: 25px;
+}
+
+.footerCont .container .brandLogo a {
+    font-size: larger;
+    transition: all 0.5s;
+}
+
+.footerCont .container .brandLogo .email h1 {
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: all 0.5s;
+}
+
+.footerCont .container .brandLogo .email h1:hover,
+.footerCont .container .brandLogo a:hover {
+    color: var(--blue-1);
+}
+
+.footerCont .container .quiklinks li,
+.footerCont .container .navigation li {
+    /* padding: 0 80px 0; */
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.footerCont .container .address {
+    font-size: 1.2rem;
+}
+
+.footerCont .container .address ion-icon {
+    font-size: 1.8rem;
+}
+
+.footerCont .copyright {
+    border-top: 2px solid var(--theme-border);
+    color: var(--theme-text-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 5px 0;
+
+}
+
+
+/* ------------------------------- Footer End ---------------------------------- */
+/*          --------------------------===-----------------------------           */
