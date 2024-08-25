@@ -27,7 +27,7 @@ jobs:
     - name: Deploy to Krystal Hosting via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ftps://ftp.wecarhire.com
+        server: ftp.wecarhire.com
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
