@@ -26,3 +26,4 @@ jobs:
           .git/
           .next/cache/
           node_modules/
+          .github/ 
