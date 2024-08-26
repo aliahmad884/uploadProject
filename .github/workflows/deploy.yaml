@@ -12,6 +12,32 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: npm install
+
+    # Step 3: Build the project
+    - name: Build the project
+      run: npm run build
+      
+    - name: Compress .next directory
+      run: zip -r next.zip .next/
+
+    - name: Upload compressed .next directory
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./next.zip/
+        server-dir: /
+        exclude: |
+          .git/
+          .git/**
+          .next/cache/**
+          node_modules/**
+          .github/**
       
     # Step 2: Upload the 'app' directory
     - name: Upload app directory
