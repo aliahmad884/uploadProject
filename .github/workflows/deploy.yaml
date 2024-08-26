@@ -43,60 +43,7 @@ jobs:
           node_modules/**
           .github/**
       
-    # Step 2: Upload the 'app' directory
-    - name: Upload app directory
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        local-dir: ./app/
-        server-dir: /app/
-        exclude: |
-          .git/
-          .git/**
-          .next/cache/**
-          node_modules/**
-          .github/**
 
-    # Step 3: Upload the 'components' directory
-    - name: Upload components directory
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        local-dir: ./components/
-        server-dir: /components/
-        exclude: |
-          .git/
-          .git/**
-          .next/cache/**
-          node_modules/**
-          .github/**
-
-    # Step 4: Upload the remaining files and directories
-    - name: Upload remaining files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        local-dir: ./
-        server-dir: /
-        exclude: |
-          .git/
-          .git/**
-          .next/**
-          node_modules/**
-          .github/**
-          public/**
-          app/**
-          components/**
-          deployment/**
 
     - name: Extract ZIP file on server
       uses: appleboy/ssh-action@v0.1.2
@@ -104,6 +51,7 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT }}
         script: |
           cd /home/wecarhir/test06.aldortech.com/deployment/
           unzip next.zip -d ../
