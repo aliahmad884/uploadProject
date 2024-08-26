@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Deploy to Krystal Hosting via FTP
+    - name: Deploy to Krystal Hosting via FTPS
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ftp.wecarhire.com
@@ -22,6 +22,6 @@ jobs:
         protocol: ftps 
         local-dir: ./
         server-dir: /home/wecarhir/test06.aldortech.com/  # Adjust this if your app is in a different directory
-        # exclude: |
-        #   .next/cache/
-        #   node_modules/
+        exclude: |
+          .next/cache/
+          node_modules/
