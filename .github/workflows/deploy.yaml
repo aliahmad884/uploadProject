@@ -12,7 +12,24 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      
+
+    # Step 1: Upload the 'public' directory
+    - name: Upload public directory
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./public/
+        server-dir: /public
+        exclude: |
+          .git/
+          .git/**
+          .next/cache/**
+          node_modules/**
+          .github/**
+
     # Step 2: Upload the 'app' directory
     - name: Upload app directory
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -22,7 +39,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         local-dir: ./app/
-        server-dir: /
+        server-dir: /app
         exclude: |
           .git/
           .git/**
@@ -39,7 +56,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         local-dir: ./components/
-        server-dir: /
+        server-dir: /components
         exclude: |
           .git/
           .git/**
@@ -66,3 +83,15 @@ jobs:
           public/**
           app/**
           components/**
+
+    # Step 5: Retry logic for failed uploads
+    - name: Retry failed uploads
+      run: |
+        echo "Implement retry logic here if needed. You can use a different tool or script to handle retries."
+
+    # Step 6: Notify on failure
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "Deployment failed. Please check the logs for details."
+        # You can add additional notification steps here (e.g., send an email or Slack message).
