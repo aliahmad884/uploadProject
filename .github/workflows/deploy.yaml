@@ -35,7 +35,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         local-dir: ./deployment/
-        server-dir: /
+        server-dir: /deployment/
         exclude: |
           .git/
           .git/**
@@ -78,7 +78,25 @@ jobs:
           .github/**
 
     # Step 4: Upload the remaining files and directories
-   
+    - name: Upload remaining files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./
+        server-dir: /
+        exclude: |
+          .git/
+          .git/**
+          .next/**
+          node_modules/**
+          .github/**
+          public/**
+          app/**
+          components/**
+          
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
       run: |
