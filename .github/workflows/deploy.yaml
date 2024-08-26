@@ -45,12 +45,10 @@ jobs:
           .github/**
 
     - name: Check if next.zip exists on the server
-      run: |
-        curl --fail --silent --show-error --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} ftp://${{ secrets.FTP_SERVER }}/deployment/next.zip
-      shell: bash
+      run: ls -al deployment/
       
     - name: UnZip .next directory
-      run: unzip /deployment/next.zip
+      run: unzip deployment/next.zip
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
