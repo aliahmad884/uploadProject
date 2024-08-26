@@ -44,15 +44,10 @@ jobs:
           node_modules/**
           .github/**
 
-    - name: List files on FTP server
+    - name: Check if next.zip exists on the server
       run: |
-        apt-get update && apt-get install -y ftp
-        echo "open ${{ secrets.FTP_SERVER }}" > ftp_commands.txt
-        echo "user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}" >> ftp_commands.txt
-        echo "cd /deployment" >> ftp_commands.txt
-        echo "ls" >> ftp_commands.txt
-        echo "bye" >> ftp_commands.txt
-        ftp -n < ftp_commands.txt
+        curl --fail --silent --show-error --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} ftp://${{ secrets.FTP_SERVER }}/deployment/next.zip
+      shell: bash
       
     - name: UnZip .next directory
       run: unzip /deployment/next.zip
