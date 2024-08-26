@@ -96,6 +96,18 @@ jobs:
           public/**
           app/**
           components/**
+          deployment/**
+
+    - name: Extract ZIP file on server
+      uses: appleboy/ssh-action@v0.1.2
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd /home/wecarhir/test06.aldortech.com/deployment/
+          unzip next.zip -d ../
+          rm next.zip
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
