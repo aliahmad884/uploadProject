@@ -19,9 +19,13 @@ jobs:
     # Step 3: Build the project
     - name: Build the project
       run: npm run build
-      
-    - name: Compress .next directory
-      run: zip -r next.zip .next/
+
+    - name: Create deployment directory
+      run: mkdir -p deployment
+
+    # Step 3: Zip the .next directory and place it in the deployment folder
+    - name: Zip .next directory
+      run: zip -r deployment/next.zip .next/
 
     - name: Upload compressed .next directory
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -30,7 +34,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        local-dir: ./next.zip/
+        local-dir: ./deployment/
         server-dir: /
         exclude: |
           .git/
