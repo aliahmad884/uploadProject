@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        local-dir: ./public
+        local-dir: ./public/
         server-dir: /
         exclude: |
           .git/
@@ -38,7 +38,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        local-dir: ./app
+        local-dir: ./app/
         server-dir: /
         exclude: |
           .git/
@@ -55,7 +55,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        local-dir: ./components
+        local-dir: ./components/
         server-dir: /
         exclude: |
           .git/
