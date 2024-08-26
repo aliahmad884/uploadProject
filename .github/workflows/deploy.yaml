@@ -12,6 +12,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+       # Step 3: Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Step 4: Build the project
+    - name: Build project
+      run: npm run build
 
     # Step 2: Upload the 'app' directory
     - name: Upload app directory
