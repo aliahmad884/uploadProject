@@ -14,15 +14,15 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '22.4.1'  # You can use '20' or '22' based on your preference
+      # uses: actions/setup-node@v3
+      # with:
+        # node-version: '22.4.1'  # You can use '20' or '22' based on your preference
 
     - name: Install dependencies
-      run: npm install
+      # run: npm install
 
-    - name: Build Next.js app
-      run: npm run build
+    # - name: Build Next.js app
+      # run: npm run build
 
     - name: Deploy to Krystal Hosting via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -33,6 +33,6 @@ jobs:
         protocol: ftps 
         local-dir: ./
         server-dir: /home/wecarhir/test06.aldortech.com/  # Adjust this if your app is in a different directory
-        exclude: |
-          .next/cache/
-          node_modules/
+        # exclude: |
+        #   .next/cache/
+        #   node_modules/
