@@ -44,8 +44,15 @@ jobs:
           node_modules/**
           .github/**
 
-    - name: List files in the server deployment directory
-      run: ls -al /deployment/
+    - name: List files on FTP server
+      run: |
+        apt-get update && apt-get install -y ftp
+        echo "open ${{ secrets.FTP_SERVER }}" > ftp_commands.txt
+        echo "user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}" >> ftp_commands.txt
+        echo "cd /deployment" >> ftp_commands.txt
+        echo "ls" >> ftp_commands.txt
+        echo "bye" >> ftp_commands.txt
+        ftp -n < ftp_commands.txt
       
     - name: UnZip .next directory
       run: unzip /deployment/next.zip
