@@ -22,7 +22,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         local-dir: ./public/
-        server-dir: /public
+        server-dir: /public/
         exclude: |
           .git/
           .git/**
@@ -39,7 +39,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         local-dir: ./app/
-        server-dir: /app
+        server-dir: /app/
         exclude: |
           .git/
           .git/**
@@ -56,7 +56,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         local-dir: ./components/
-        server-dir: /components
+        server-dir: /components/
         exclude: |
           .git/
           .git/**
