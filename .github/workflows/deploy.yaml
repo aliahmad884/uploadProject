@@ -86,16 +86,17 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         local-dir: ./
-        server-dir: /
+        server-dir: / 
         exclude: |
           .git/
           .git/**
-          .next/cache/**
+          .next/**
           node_modules/**
           .github/**
           public/**
           app/**
           components/**
+          deployment/**
 
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
