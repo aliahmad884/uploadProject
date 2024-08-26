@@ -43,11 +43,8 @@ jobs:
           node_modules/**
           .github/**
       
-
     - name: UnZip .next directory
-      run: unzip next.zip -d /
-      
-
+      run: unzip /deployment/next.zip -d /
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
