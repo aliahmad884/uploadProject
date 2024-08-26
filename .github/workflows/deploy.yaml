@@ -43,6 +43,9 @@ jobs:
           .next/cache/**
           node_modules/**
           .github/**
+
+    - name: List files in the server deployment directory
+      run: ls -al /deployment/
       
     - name: UnZip .next directory
       run: unzip /deployment/next.zip
