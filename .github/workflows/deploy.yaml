@@ -23,5 +23,6 @@ jobs:
         local-dir: ./
         server-dir: /home/wecarhir/test06.aldortech.com/  # Adjust this if your app is in a different directory
         exclude: |
+          .git/
           .next/cache/
           node_modules/
