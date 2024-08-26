@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps 
         local-dir: ./
-        server-dir: /home/wecarhir/test06.aldortech.com/  # Adjust this if your app is in a different directory
+        server-dir: /  # Adjust this if your app is in a different directory
         exclude: |
           .git/
           .git/**
