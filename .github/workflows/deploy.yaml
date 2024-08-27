@@ -43,6 +43,7 @@ jobs:
           .next/**
           node_modules/**
           .github/**
+          public/**
 
     - name: Upload unzip script and other files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -59,6 +60,7 @@ jobs:
           .next/**
           node_modules/**
           .github/**
+          public/**
           
 
     # Run PHP script to unzip the .next folder on the server
