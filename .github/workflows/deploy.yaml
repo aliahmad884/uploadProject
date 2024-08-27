@@ -10,6 +10,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+      
+    - name: Install dependencies
+      run: npm install
+
+    # Step 3: Build the project
+    - name: Build the project
+      run: npm run build
+
+    - name: Create deployment directory
+      run: mkdir -p deployment
+
+    # Step 3: Zip the .next directory and place it in the deployment folder
+    - name: Zip .next directory
+      run: zip -r deployment/next.zip .next/
+
+    - name: Upload compressed .next directory
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./deployment/
+        server-dir: /deployment/
+        exclude: |
+          .git/
+          .git/**
+          .next/cache/**
+          node_modules/**
+          .github/**
+
     - name: Check if next.zip exists on the server
       run: ls -al deployment/
 
@@ -19,7 +53,7 @@ jobs:
 
       
     - name: UnZip .next directory
-      run: unzip -o deployment/next.zip
+      run: unzip -o deployment/next.zip -d deployment/
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
