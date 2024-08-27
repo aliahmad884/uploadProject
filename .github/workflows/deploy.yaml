@@ -81,7 +81,7 @@ jobs:
           deployment/**
 
 
-    - name: Upload unzip script and other files
+    - name: Upload remaining files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.FTP_SERVER }}
@@ -104,7 +104,7 @@ jobs:
 
     # Run PHP script to unzip the .next folder on the server
     - name: Run PHP unzip script
-      run: curl http://yourdomain.com/unzip.php
+      run: curl http://test06.aldortech.com/unzip.php
 
           
     # Step 5: Retry logic for failed uploads
