@@ -44,16 +44,27 @@ jobs:
           node_modules/**
           .github/**
 
-    - name: Check if next.zip exists on the server
-      run: ls -al deployment/
+    - name: Upload unzip script and other files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./
+        server-dir: /
+        exclude: |
+          .git/
+          .git/**
+          .next/cache/**
+          node_modules/**
+          .github/**
+          
 
-      
-    - name: Check root Dir on the server
-      run: ls -al deployment/..
+    # Run PHP script to unzip the .next folder on the server
+    - name: Run PHP unzip script
+      run: curl http://yourdomain.com/unzip.php
 
-      
-    - name: UnZip .next directory
-      run: unzip -o deployment/next.zip -d ./
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
