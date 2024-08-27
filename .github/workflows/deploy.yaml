@@ -49,7 +49,7 @@ jobs:
 
       
     - name: Check root Dir on the server
-      run: ls -al ./
+      run: ls -al tes06.aldortech.com/
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
