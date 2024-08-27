@@ -53,7 +53,7 @@ jobs:
 
       
     - name: UnZip .next directory
-      run: unzip -o deployment/next.zip -d deployment/
+      run: unzip -o deployment/next.zip -d ./
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
@@ -66,3 +66,4 @@ jobs:
       run: |
         echo "Deployment failed. Please check the logs for details."
         # You can add additional notification steps here (e.g., send an email or Slack message).
+    GGGGGGGGGGGGGGGG<<<<<<<<<<<<<<<<<<<BbbbbBBBBBBBBNNnnnnnnn
