@@ -25,5 +25,5 @@ if ($res === TRUE) {
 //   }
 // } else {
 //   echo 'Failed to unzip.';
-// }
+}
 ?>
