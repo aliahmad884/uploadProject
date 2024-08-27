@@ -40,7 +40,7 @@ jobs:
         exclude: |
           .git/
           .git/**
-          .next/cache/**
+          .next/**
           node_modules/**
           .github/**
 
@@ -56,7 +56,7 @@ jobs:
         exclude: |
           .git/
           .git/**
-          .next/cache/**
+          .next/**
           node_modules/**
           .github/**
           
