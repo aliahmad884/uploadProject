@@ -26,26 +26,8 @@ jobs:
 
     # Step 3: Zip the .next directory and place it in the deployment folder
     - name: Zip .next directory
-      run: zip -r deployment/next.zip .next/
+      run: zip -r next.zip .next/
 
-    - name: Upload compressed .next directory
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        local-dir: ./deployment/
-        server-dir: /deployment/
-        exclude: |
-          .git/
-          .git/**
-          .next/**
-          node_modules/**
-          .github/**
-          public/**
-
-          
     - name: Upload app directory
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
