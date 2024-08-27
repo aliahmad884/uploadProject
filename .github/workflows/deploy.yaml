@@ -66,4 +66,3 @@ jobs:
       run: |
         echo "Deployment failed. Please check the logs for details."
         # You can add additional notification steps here (e.g., send an email or Slack message).
-    GGGGGGGGGGGGGGGG<<<<<<<<<<<<<<<<<<<BbbbbBBBBBBBBNNnnnnnnn
