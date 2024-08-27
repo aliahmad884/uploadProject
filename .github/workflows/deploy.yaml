@@ -53,7 +53,7 @@ jobs:
 
       
     - name: UnZip .next directory
-      run: unzip -o deployment/next.zip -d /deployment/..
+      run: unzip -o deployment/next.zip -d deployment/..
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
