@@ -50,9 +50,6 @@ jobs:
       
     - name: Check root Dir on the server
       run: ls -al ./
-      
-    - name: Check domain Dir on the server
-      run: ls -al ./test06.aldortech.com/
           
     # Step 5: Retry logic for failed uploads
     - name: Retry failed uploads
