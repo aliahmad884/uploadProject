@@ -45,6 +45,42 @@ jobs:
           .github/**
           public/**
 
+          
+    - name: Upload app directory
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./app/
+        server-dir: /app/
+        exclude: |
+          .git/
+          .git/**
+          .next/cache/**
+          node_modules/**
+          .github/**
+          deployment/**
+
+    - name: Upload components directory
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./components/
+        server-dir: /components/
+        exclude: |
+          .git/
+          .git/**
+          .next/cache/**
+          node_modules/**
+          .github/**
+          deployment/**
+
+
     - name: Upload unzip script and other files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
@@ -61,6 +97,9 @@ jobs:
           node_modules/**
           .github/**
           public/**
+          app/**
+          components/**
+          deployment/**
           
 
     # Run PHP script to unzip the .next folder on the server
